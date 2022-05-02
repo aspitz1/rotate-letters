@@ -24,15 +24,3 @@ setInterval(function(){
 window.addEventListener('load', (event) => {
   animate_marquee();
 })
-// const marquee = () => {
-//   let str = "rolling rolling rolling ";
-//   let ary = str.split('')
-//
-//   for (var i=0; i < ary.length; i++){
-//     ary.unshift(ary.pop());
-//     console.log(ary.join(''));
-//     document.getElementById('marquee').innerText = ary.join('');
-//     setTimeout(marquee, 500);
-//   }
-// }
-// window.addEventListener('load', marquee);
