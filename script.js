@@ -11,14 +11,24 @@ const animate_marquee = () => {
   let textTwo = textNodeTwo.data;
 // textOne marquee animation
 setInterval(function(){
-  // take positon 1-27 and add positon 0 to end
-  textOne = textOne.substring(1, textOne.length) + textOne[0]; // side note: text.length = 27
+  // create array of textOne
+  let aryOne = textOne.split('');
+  // use methods to move last character to 0 index
+  aryOne.unshift(aryOne.pop());
+  // set textOne using method to transform aryOne into string
+  textOne = aryOne.join('');
+  // set textNodeOne.data to be textOne
   textNodeOne.data = textOne;
 }, 100);
 setInterval(function(){
-  // take position 0-26 and add position
-  textTwo = textTwo[textTwo.length - 1] + textTwo.substring(0, textTwo.length - 1);
-  textNodeTwo.data = textTwo;
+  // for loop that makes textTwo into an array then uses above stated methods to create the marquee animation
+  for(let i = 0; i <= textTwo.length; i++){
+    let aryTwo = textTwo.split('');
+    aryTwo.unshift(aryTwo.pop());
+    textTwo = aryTwo.join('');
+    textNodeTwo.data = textTwo;
+  }
+// each setIntrval runs every 100 millseconds
 }, 100);
 }
 window.addEventListener('load', (event) => {
