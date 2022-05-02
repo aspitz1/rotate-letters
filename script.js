@@ -1,23 +1,25 @@
 // create arrow functon
 const animate_marquee = () => {
-  // select element with id marquee in HTML
+  // declare variable as element id marquee in HTML
   let element = document.getElementById('marquee');
-  // select first div text
+  // declare first div text, will store data
   let textNodeOne = element.childNodes[1].childNodes[0];
-  // select second div text
+  // declare second div text, will store data
   let textNodeTwo = element.childNodes[3].childNodes[0];
-  // store text data in variable?? ask for more explination
+  // declare variables that are what the text will display in HTML
   let textOne = textNodeOne.data;
   let textTwo = textNodeTwo.data;
-// textOne marquee animation
+// marquee animation using method that will run function every 100 millsecond creating the illusion of movement
 setInterval(function(){
-  // take positon 1-27 and add positon 0 to end
+  // assign variable to move index 0 of the string to last position in string using concatention
   textOne = textOne.substring(1, textOne.length) + textOne[0]; // side note: text.length = 27
+  // assign value to the text displayed in HTML
   textNodeOne.data = textOne;
 }, 100);
 setInterval(function(){
-  // take position 0-26 and add position
+  // assign variable to move index 27 of string to index 0
   textTwo = textTwo[textTwo.length - 1] + textTwo.substring(0, textTwo.length - 1);
+  // assign value to the text displayed in HTML
   textNodeTwo.data = textTwo;
 }, 100);
 }
